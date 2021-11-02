@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.2",
     "parameters": {
       "vmIPPublicDnsNamePrefix": {
-        "value": "gh-vNET"
+        "value": "ghvnet"
       },
       "vmAdminUserName": {
         "value": "ghuser"
