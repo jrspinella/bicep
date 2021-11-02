@@ -31,3 +31,4 @@ jobs:
           subscriptionId: ${{ env.AZURE_SUBSCRIPTION_ID }}
           resourceGroupName: ${{ env.AZURE_RESOURCE_GROUP }}
           template: ./vm-template.json
+          parameters: ./azuredeploy.parameters.json
