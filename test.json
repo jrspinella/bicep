@@ -1,0 +1,56 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "bicep",
+      "version": "0.4.1008.15138",
+      "templateHash": "10040007948779149185"
+    }
+  },
+  "parameters": {
+    "nicName": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "staticIP": {
+      "type": "string"
+    },
+    "subnetid": {
+      "type": "string"
+    },
+    "nsgid": {
+      "type": "string",
+      "defaultValue": ""
+    }
+  },
+  "functions": [],
+  "variables": {
+    "nsgValue": "[if(not(equals(parameters('nsgid'), '')), createObject('id', parameters('nsgid')), createObject())]"
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Network/networkInterfaces",
+      "apiVersion": "2020-06-01",
+      "name": "[parameters('nicName')]",
+      "location": "[parameters('location')]",
+      "properties": {
+        "ipConfigurations": [
+          {
+            "name": "ipconfig1",
+            "properties": {
+              "privateIPAllocationMethod": "[if(not(equals(parameters('staticIP'), 'blank')), 'Static', 'Dynamic')]",
+              "privateIPAddress": "[if(not(equals(parameters('staticIP'), 'blank')), parameters('staticIP'), null())]",
+              "subnet": {
+                "id": "[parameters('subnetid')]"
+              }
+            }
+          }
+        ],
+        "networkSecurityGroup": "[variables('nsgValue')]"
+      }
+    }
+  ]
+}
