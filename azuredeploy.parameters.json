@@ -3,13 +3,13 @@
     "contentVersion": "1.0.0.2",
     "parameters": {
       "vmIPPublicDnsNamePrefix": {
-        "value": "GEN-UNIQUE-13"
+        "value": "gh-vNET"
       },
       "vmAdminUserName": {
         "value": "ghuser"
       },
       "vmAdminPassword": {
-        "value": "GEN-PASSWORD"
+        "value": "Normandy229!"
       }
     }
   }
