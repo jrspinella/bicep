@@ -10,16 +10,20 @@
   },
   "parameters": {
     "nicName": {
-      "type": "string"
+      "type": "string",
+      "defaultValue": ""
     },
     "location": {
-      "type": "string"
+      "type": "string",
+      "defaultValue": ""
     },
     "staticIP": {
-      "type": "string"
+      "type": "string",
+      "defaultValue": ""
     },
     "subnetid": {
-      "type": "string"
+      "type": "string",
+      "defaultValue": ""
     },
     "nsgid": {
       "type": "string",
