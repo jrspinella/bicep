@@ -30,4 +30,4 @@ jobs:
           scope: resourcegroup
           subscriptionId: ${{ env.AZURE_SUBSCRIPTION_ID }}
           resourceGroupName: ${{ env.AZURE_RESOURCE_GROUP }}
-          template: ./vNet.json
+          template: ./Deploy-Network.ps1
